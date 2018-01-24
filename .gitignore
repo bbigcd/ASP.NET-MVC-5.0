@@ -38,3 +38,8 @@ Thumbs.db
 
 # dotCover
 *.dotCover
+.vs/ASP.NET MVC 5.0/v15/Server/sqlite3/db.lock
+.vs/ASP.NET MVC 5.0/v15/Server/sqlite3/storage.ide
+.vs/ASP.NET MVC 5.0/v15/Server/sqlite3/storage.ide-shm
+.vs/ASP.NET MVC 5.0/v15/Server/sqlite3/storage.ide-wal
+.vs/config/applicationhost.config
