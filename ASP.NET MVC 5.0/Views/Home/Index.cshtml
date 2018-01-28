@@ -33,7 +33,7 @@
 <div>
     @* 简单的form表单 *@
     <form action="http://www.bing.com/search">
-        <input name="q" type="text"/>
+        <input name="q" type="text" />
         <input type="submit" value="Search!" />
     </form>
 </div>
@@ -49,8 +49,34 @@
 @* HTML辅助方法 *@
 @using (Html.BeginForm("search", "Home", FormMethod.Get))
 {
-    <input type="text" name="q"/>
+    <input type="text" name="q" />
     <input type="submit" value="Search!" />
 }
 
 @Html.TextArea("text", "hello <br/> world")
+
+@* HTML辅助方法 重载版本*@
+@using (Html.BeginForm("search", "Home", FormMethod.Get, new { target = "_blank"}))
+{
+    <input type="text" name="q" />
+    <input type="submit" value="Search!" />
+}
+
+@using (Html.BeginForm()) { 
+    @Html.ValidationSummary(excludePropertyErrors:true)
+    <fieldset>
+        <legend>
+            Edit Album
+        </legend>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+@Html.TextBox("Title", "test")
+@Html.TextArea("text", "hello <br /> world", 10, 80, null)
+
+@Html.Label("GenrId")
+`
