@@ -31,15 +31,26 @@ namespace ASP.NET_MVC_5._0.Controllers
             return View();
         }
 
-        //无 Route 无法被访问
-        public string Search()
+        //-------------------------------
+        //无 Route 将无法被访问
+        //重载的接口，需要对路由的参数进行约束，才能匹配正确
+        [Route("home/search/{id:int}")]
+        public string Search(int id)
         {
-            return "hello";
+            return id.GetType().ToString();
         }
+
+        //string 类型无须指定
+        [Route("home/search/{id}")]
+        public string Search(string id)
+        {
+            return id.GetType().ToString();
+        }
+        //-------------------------------
 
         [HttpGet]
         [ActionName("date")]//不起作用
-        [Route("{year}/{month}/{day}")]
+        [Route("{year:int}/{month:int}/{day:int}")]
         public string GetDate(string year, string month, string day)
         {
             return year + "年" + month + "月" + day + "日";
