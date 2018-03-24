@@ -33,7 +33,7 @@ namespace ASP.NET_MVC_5._0.Controllers
 
         //-------------------------------
         //无 Route 将无法被访问
-        //重载的接口，需要对路由的参数进行约束，才能匹配正确
+        //重载的接口，需要对路由的参数进行约束，才能匹配正确  在传统路由模式下，二者无法正确匹配
         [Route("home/search/{id:int}")]
         public string Search(int id)
         {
